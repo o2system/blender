@@ -1,0 +1,44 @@
+{
+  "name": "o2system-blender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "postcss-custom-properties": "^8.0.9",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.5.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "jshint": "^2.9.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o2system/blender.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/o2system/blender/issues"
+  },
+  "homepage": "https://github.com/o2system/blender#readme"
+}
