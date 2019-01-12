@@ -7,13 +7,24 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
-// ------------------------------------------------------------------------
+
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 /**
  * Class Blender
  */
 export default class Blender {
     constructor() {
-        console.log('Hello Iam blender');
+        console.log('Hello Iam blender')
+    };
+
+    sassLoader = {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            // "postcss-loader",
+            "sass-loader",
+        ],
     }
 }
