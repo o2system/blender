@@ -1,3 +1,4 @@
+
 const path = require("path");
 const Config = require("./Options");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -10,6 +11,8 @@ const JSLoader = {
 		options: Config.BabelConfig()
 	}]
 };
+
+// export  default JSLoader;
 
 // const ESLintLoader = {
 // 	test: /\.js$/,
@@ -85,13 +88,19 @@ const HTMLLoader = {
 	]
 };
 
-module.exports = {
-	JSLoader: JSLoader,
-	// ESLintLoader: ESLintLoader,
-	HTMLLoader: HTMLLoader,
-	SASSLoader: SASSLoader,
-	ImageLoader: ImageLoader,
-	FontsLoader: FontsLoader
+// module.exports = {
+// 	JSLoader: JSLoader,
+// 	// ESLintLoader: ESLintLoader,
+// 	HTMLLoader: HTMLLoader,
+// 	SASSLoader: SASSLoader,
+// 	ImageLoader: ImageLoader,
+// 	FontsLoader: FontsLoader
+//
+// };
 
-};
+export default {
+	JSLoader
+}
 
+export class jsLoader {
+}
