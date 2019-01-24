@@ -8,13 +8,11 @@
  *  @copyright      Copyright (c) Steeve Andrian Salim
  */
 
-/**
- * Class Blender
- */
-export default class Blender {
-    constructor() {
-        console.log('Hello Iam blender');
-
-    };
-
-}
+module.exports = {
+	plugins: {
+		"postcss-import": {},
+		"postcss-preset-env": {
+			browsers: "last 4 versions",
+		}
+	}
+};

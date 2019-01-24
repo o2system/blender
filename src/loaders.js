@@ -1,9 +1,19 @@
 
+/**
+ * This file is part of the O2System Framework package.
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ *
+ *  @author         Steeve Andrian Salim
+ *  @copyright      Copyright (c) Steeve Andrian Salim
+ */
+
 const path = require("path");
 const Config = require("./Options");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const JSLoader = {
+const jsLoader = {
 	test: /\.js$/,
 	exclude: /(node_modules|bower_components)/,
 	use: [{
@@ -14,49 +24,41 @@ const JSLoader = {
 
 // export  default JSLoader;
 
-// const ESLintLoader = {
-// 	test: /\.js$/,
-// 	enforce: "pre",
-// 	exclude: /(node_modules|bower_components)/,
-// 	use: {
-// 		loader: "eslint-loader",
-// 		options: {
-// 			configFile: __dirname + "./../.eslintrc"
-// 		},
-// 	}
-// };
-const SASSLoader = {
+const eslintLoader = {
+	test: /\.js$/,
+	enforce: "pre",
+	exclude: /(node_modules|bower_components)/,
+	use: {
+		loader: "eslint-loader",
+		options: {
+			configFile: __dirname + "./../.eslintrc"
+		},
+	}
+};
+
+
+const sassLoader = {
 	test: /\.(sa|sc|c)ss$/,
 	use: [
 		MiniCssExtractPlugin.loader,
-		"css-loader",
-		// "postcss-loader",
-		"sass-loader",
+		{loader: "style-loader", sourceMap: true},
+		{
+			loader: "css-loader",
+			options: { importLoaders: 2, sourceMap: true },
+		},
+		{
+			loader: "postcss-loader",
+			options: {
+				config: {
+					path:  path.resolve(__dirname, "postcss.config.js")
+				}
+			},
+		},
+		{loader: "sass-loader", sourceMap: true}
 	],
 };
 
-// const SASSLoader = {
-// 	test: /\.(sa|sc|c)ss$/,
-// 	use: [
-// 		MiniCssExtractPlugin.loader,
-// 		{loader: "style-loader", sourceMap: true},
-// 		{
-// 			loader: "css-loader",
-// 			options: { importLoaders: 2, sourceMap: true },
-// 		},
-// 		{
-// 			loader: "postcss-loader",
-// 			options: {
-// 				config: {
-// 					path:  path.resolve(__dirname, "postcss.config.js")
-// 				}
-// 			},
-// 		},
-// 		{loader: "sass-loader", sourceMap: true}
-// 	],
-// };
-
-const ImageLoader = {
+const imageLoader = {
 	test: /\.(jpg|jpeg|gif|png|webpm|svg)$/,
 	use: [{
 		loader: "file-loader",
@@ -66,7 +68,7 @@ const ImageLoader = {
 	}]
 };
 
-const FontsLoader = {
+const fontsLoader = {
 	test: /.(woff|woff2|ttf|eot)$/,
 	use: [
 		{
@@ -78,7 +80,7 @@ const FontsLoader = {
 	]
 };
 
-const HTMLLoader = {
+const htmlLoader = {
 	test: /\.html$/,
 	use: [
 		{
@@ -88,19 +90,11 @@ const HTMLLoader = {
 	]
 };
 
-// module.exports = {
-// 	JSLoader: JSLoader,
-// 	// ESLintLoader: ESLintLoader,
-// 	HTMLLoader: HTMLLoader,
-// 	SASSLoader: SASSLoader,
-// 	ImageLoader: ImageLoader,
-// 	FontsLoader: FontsLoader
-//
-// };
-
-export default {
-	JSLoader
-}
-
-export class jsLoader {
-}
+module.exports = {
+	jsLoader: jsLoader,
+	eslintLoader: eslintLoader,
+	htmlLoader: htmlLoader,
+	sassLoader: sassLoader,
+	fontsLoader: fontsLoader,
+	imageLoader: imageLoader
+};

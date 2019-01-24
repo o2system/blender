@@ -1,3 +1,13 @@
+/**
+ * This file is part of the O2System Framework package.
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ *
+ *  @author         Steeve Andrian Salim
+ *  @copyright      Copyright (c) Steeve Andrian Salim
+ */
+
 const path = require("path");
 const _MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const _TerserPlugin = require("terser-webpack-plugin");
@@ -23,7 +33,12 @@ const TerserPlugin = new _TerserPlugin({
 
 
 const OptimizeCSSAssetsPlugin = new _OptimizeCSSAssetsPlugin({
-	include: /\.min\.css$/
+	assetNameRegExp: /\.min\.css$/g,
+	cssProcessor: require("cssnano"),
+	cssProcessorPluginOptions: {
+		preset: ["default", { discardComments: { removeAll: true } }],
+	},
+	canPrint: true
 });
 
 module.exports = {

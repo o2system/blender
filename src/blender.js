@@ -1,17 +1,17 @@
 /**
  * This file is part of the O2System Framework package.
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
  *
- * @author         Steeve Andrian Salim
- * @copyright      Copyright (c) Steeve Andrian Salim
+ *  @author         Steeve Andrian Salim
+ *  @copyright      Copyright (c) Steeve Andrian Salim
  */
 // ------------------------------------------------------------------------
 
-const path = require("path");
-const { CleanWebpackPlugin, OptimizeCSSAssetsPlugin, TerserPlugin, MiniCssExtractPlugin } = require("./plugins");
-const { JSLoader, SASSLoader, ImageLoader, FontsLoader } = require("./loaders");
+// const path = require("path");
+const plugins = require("./plugins");
+const loaders = require("./loaders");
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
@@ -33,15 +33,15 @@ module.exports = {
 	devtool: "source-map",
 	module: {
 		rules: [
-			JSLoader,
-			SASSLoader,
-			ImageLoader,
-			FontsLoader
+			loaders.jsLoader,
+			loaders.sassLoader,
+			loaders.fontsLoader,
+			loaders.imageLoader
 		]
 	},
 	plugins: [
-		CleanWebpackPlugin,
-		MiniCssExtractPlugin
+		plugins.CleanWebpackPlugin,
+		plugins.MiniCssExtractPlugin
 	],
 	optimization: {
 		minimizer: getMinimizer(),
@@ -50,9 +50,9 @@ module.exports = {
 
 
 function getMinimizer() {
-	let result = [OptimizeCSSAssetsPlugin];
+	let result = [plugins.OptimizeCSSAssetsPlugin];
 	if (!devMode) {
-		result.push(TerserPlugin);
+		result.push(plugins.TerserPlugin);
 	}
 
 	return result;
