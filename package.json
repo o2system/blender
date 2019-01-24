@@ -31,6 +31,10 @@
     "jshint": "^2.9.7"
   },
   "scripts": {
+    "start": "npm run dev",
+    "build": "webpack --config=config/webpack.build.js",
+    "build:docs": "webpack --config=config/webpack.docs.js",
+    "dev": "webpack-dev-server --config=config/webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
