@@ -60,7 +60,7 @@ class JavaScript {
 
         this.toCompile.push({ entry, output });
 
-        Mix.bundlingJavaScript = true;
+        Blender.bundlingJavaScript = true;
     }
 
     /**

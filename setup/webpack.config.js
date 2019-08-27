@@ -16,9 +16,9 @@
  */
 let blender = require('../src/main');
 
-let ComponentFactory = require('../src/components/ComponentFactory');
+let Factory = require('../src/components/Factory');
 
-new ComponentFactory().installAll();
+new Factory().installAll();
 
 require(Blender.paths.init());
 

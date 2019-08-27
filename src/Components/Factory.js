@@ -210,4 +210,4 @@ class Factory {
     }
 }
 
-module.exports = ComponentFactory;
+module.exports = Factory;

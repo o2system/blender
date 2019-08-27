@@ -27,7 +27,7 @@ class Paths {
     }
 
     /**
-     * Set the root path to resolve webpack.mix.js.
+     * Set the root path to resolve webpack.blender.js.
      *
      * @param {string} path
      */

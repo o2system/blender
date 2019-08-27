@@ -79,7 +79,7 @@ class Example {
     }
 
     /**
-     * Append to the master Mix webpack entry object.
+     * Append to the master Blender webpack entry object.
      *
      * @param  {Entry} entry
      * @return {void}
@@ -124,7 +124,7 @@ class Example {
     }
 
     /**
-     * Babel config to be merged with Mix's defaults.
+     * Babel config to be merged with Blender's defaults.
      *
      * @return {Object}
      */

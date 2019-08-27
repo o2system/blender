@@ -57,7 +57,7 @@ Blender.listen('init', () => {
 });
 
 /**
- * Mix exposes a simple, fluent API for activating many common build
+ * Blender exposes a simple, fluent API for activating many common build
  * steps that a typical project should require. Behind the scenes,
  * all calls to this fluent API will update the above config.
  */

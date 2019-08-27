@@ -97,7 +97,7 @@ class File {
      * Get the relative path to the file, from the project root.
      */
     relativePath() {
-        return path.relative(Mix.paths.root(), this.path());
+        return path.relative(Blender.paths.root(), this.path());
     }
 
     /**
@@ -132,7 +132,7 @@ class File {
 
         let extra = this.filePath.startsWith(publicPath) ? publicPath : '';
 
-        return this.path().replace(Mix.paths.root(extra), '');
+        return this.path().replace(Blender.paths.root(extra), '');
     }
 
     /**
