@@ -2,7 +2,7 @@
   "name": "o2system-blender",
   "description": "O2System Blener is a Webpack wrapper for use with O2System Framework.",
   "homepage": "https://blender.o2system.id",
-  "version": "2.0.5",
+  "version": "2.0.7",
   "main": "src/main.js",
   "author": "Steeven Andrian Salim <steeven@o2system.id> (https://o2system.id/team/profile/steeven)",
   "contributors": [
