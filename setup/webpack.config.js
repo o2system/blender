@@ -14,7 +14,7 @@
  * file. Based on what the user requests in that file,
  * a generic config object will be constructed for us.
  */
-let blender = require('../src/main');
+let Blender = require('../src/main');
 
 let Factory = require('../src/components/Factory');
 
