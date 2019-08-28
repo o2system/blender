@@ -33,8 +33,8 @@ global.Blender = new (require('./Blender'))();
  */
 
 if (Blender.sees('o2system')) {
-    Config.outputPath = 'assets/';
-    Config.publicPath = 'public/';
+    Config.outputPath = 'assets';
+    Config.publicPath = 'public';
 }
 
 /**
