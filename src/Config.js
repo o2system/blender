@@ -125,7 +125,8 @@ module.exports = function() {
          */
         fileLoaderDirs: {
             images: 'img',
-            fonts: 'fonts'
+            fonts: 'fonts',
+            media: 'media'
         },
 
         /**

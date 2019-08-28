@@ -42,10 +42,21 @@ class Api {
     /**
      * Override the default path to your project's public directory.
      *
-     * @param {string} defaultPath
+     * @param {string} publicPath
      */
-    setPublicPath(defaultPath) {
-        Config.publicPath = path.normalize(defaultPath.replace(/\/$/, ''));
+    setPublicPath(publicPath) {
+        Config.publicPath = path.normalize(publicPath.replace(/\/$/, ''));
+
+        return this;
+    }
+
+    /**
+     * Override the default path to your project's public directory.
+     *
+     * @param {string} outputPath
+     */
+    setOutputPath(outputPath) {
+        Config.outputPath = path.normalize(outputPath.replace(/\/$/, ''));
 
         return this;
     }
@@ -53,10 +64,10 @@ class Api {
     /**
      * Set a prefix for all generated asset paths.
      *
-     * @param {string} path
+     * @param {string} resourceRoot
      */
-    setResourceRoot(path) {
-        Config.resourceRoot = path;
+    setResourceRoot(resourceRoot) {
+        Config.resourceRoot = resourceRoot;
 
         return this;
     }

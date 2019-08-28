@@ -46,7 +46,46 @@ module.exports = function() {
                         );
                     },
                     outputPath: Config.outputPath,
-                    publicPath: Config.resourceRoot + Config.outputPath
+                    publicPath: Config.resourceRoot
+                }
+            },
+
+            {
+                loader: 'img-loader',
+                options: Config.imgLoaderOptions
+            }
+        ]
+    });
+
+    // Add support for loading media.
+    rules.push({
+        // only include svg that doesn't have font in the path or file name by using negative lookahead
+        test: /(\.(webm|mp4|mp3|ogg))/,
+        loaders: [
+            {
+                loader: 'file-loader',
+                options: {
+                    name: path => {
+                        if (!/node_modules|bower_components/.test(path)) {
+                            return (
+                                Config.fileLoaderDirs.media +
+                                '/[name].[ext]?[hash]'
+                            );
+                        }
+
+                        return (
+                            Config.fileLoaderDirs.media + '/' +
+                            path
+                                .replace(/\\/g, '/')
+                                .replace(
+                                    /((.*(node_modules|bower_components))|media|image|img|assets)\//g,
+                                    ''
+                                ) +
+                            '?[hash]'
+                        );
+                    },
+                    outputPath: Config.outputPath,
+                    publicPath: Config.resourceRoot
                 }
             },
 
@@ -79,7 +118,7 @@ module.exports = function() {
                 );
             },
             outputPath: Config.outputPath,
-            publicPath: Config.resourceRoot + Config.outputPath
+            publicPath: Config.resourceRoot
         }
     });
 
@@ -90,7 +129,7 @@ module.exports = function() {
         options: {
             name: '[name].[ext]?[hash]',
             outputPath: Config.outputPath,
-            publicPath: Config.resourceRoot + Config.outputPath
+            publicPath: Config.resourceRoot
         }
     });
 
