@@ -46,7 +46,7 @@ module.exports = function() {
                         );
                     },
                     outputPath: Config.outputPath,
-                    publicPath: Config.resourceRoot
+                    publicPath: Config.resourceRoot + Config.outputPath
                 }
             },
 
@@ -79,7 +79,7 @@ module.exports = function() {
                 );
             },
             outputPath: Config.outputPath,
-            publicPath: Config.resourceRoot
+            publicPath: Config.resourceRoot + Config.outputPath
         }
     });
 
@@ -90,7 +90,7 @@ module.exports = function() {
         options: {
             name: '[name].[ext]?[hash]',
             outputPath: Config.outputPath,
-            publicPath: Config.resourceRoot
+            publicPath: Config.resourceRoot + Config.outputPath
         }
     });
 
