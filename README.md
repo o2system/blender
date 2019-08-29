@@ -1,9 +1,4 @@
-
-<div align="center" markdown="1">
-
 [![O2System Framework](http://o2system.id/assets/img/logo/logo-200px.png)](http://o2system.id/assets/img/logo/logo-white-200px.png)
-
-</div>
 
 # O2System Blender
 O2System Blender is a Webpack Wrapper to work with O2System Framework built base on Laravel Mix.
