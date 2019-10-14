@@ -16,7 +16,7 @@
  */
 require('../src/main');
 
-let Factory = require('../src/components/Factory');
+let Factory = require('../src/Components/Factory');
 
 new Factory().installAll();
 
@@ -35,6 +35,6 @@ Blender.dispatch('init', Blender);
  * for Webpack. And that's all there is to it. Simple!
  */
 
-let WebpackConfig = require('../src/builder/WebpackConfig');
+let WebpackConfig = require('../src/Builder/WebpackConfig');
 
 module.exports = new WebpackConfig().build();
