@@ -150,5 +150,5 @@
     "test": "nyc ava --verbose --serial",
     "webpack": "NODE_ENV=development webpack --progress --hide-modules"
   },
-  "version": "2.0.8"
+  "version": "2.1.2"
 }
